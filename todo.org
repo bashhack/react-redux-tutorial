@@ -1,0 +1,33 @@
+FEATURES IMPLEMENTED:
+* DONE In the 'actiontypes/player.js' file, add and export a new action for SELECT_PLAYER
+
+* DONE Define a reducer that will interpret the SELECT_PLAYER action and produce a new state for the playerDetail data
+
+* DONE In 'reducers/player.js', in the ADD_PLAYER switch block, set the newly added player’s created value to the current date
+
+* DONE Add a switch case for the new SELECT_PLAYER action type. You'll need to set the selectedPlayerIndex to the value passed in -- for example, with action.index.
+
+* DONE In the UPDATE_PLAYER_SCORE switch case, set the player's updated value to the current date
+
+* DONE In 'actions/player.js', create the action creator for the selectPlayer action. The new action creator should take an index argument and generate an action object with a type of SELECT_PLAYER and provide the index as the action metadata.
+
+* DONE In the Scoreboard component, don't forget to update the mapStateToProps method to account for the selectedPlayerIndex and, in the render method, pull selectedPlayerIndex off this.props
+
+* DONE Add a new bound action creator for the selectPlayer action creator
+
+* DONE Use the index to pull out just the selectedPlayer from the players array if the selectedPlayerIndex is not -1 (a conditional would work great for this)
+
+* DONE Pass the selectPlayer bound action creator to the player component and, in the return statement, the prop provided to PlayerDetail should be the selelectedPlayer object
+
+* DONE In the new PlayerDetail component, use the data being passed via the selectedPlayer prop to display the name, score, created, and updated data, if the selectedPlayer prop is being passed. Otherwise, it should display the paragraph "Click on a player to see more details".
+
+* DONE When you click on a player, it should display the details for that player in the PlayerDetail component. In the Player component, you'll devise a way to detect an onClick for a player that invokes the selectPlayer bound action creator
+
+* DONE The function you write should provide the index of the player as an argument -- similar to the onClick for removePlayer
+
+* DONE Don't forget to update your prop validation for selectedPlayerIndex in the Scoreboard component and selectPlayer the Player component, and make sure you also have prop validation on the selectedPlayer info coming into the new PlayerDetail component.
+
+BUGS FOUND AND FIXED:
+* DONE - Event bubbling on removal triggers SELECT_PLAYER action
+
+* DONE - If removing a player, selectedPlayerIndex should be reset
